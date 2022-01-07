@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scryfall_app/globals/styles.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -7,13 +8,12 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey.shade800,
         centerTitle: true,
         title: const Text("Scryfall"),
       ),
-      body: Container(
-        child: const Center(
-          child: const Text("Teste"),
-        ),
+      body: const Center(
+        child: Text("Teste", style: ktextWhite,),
       ),
     );
   }
