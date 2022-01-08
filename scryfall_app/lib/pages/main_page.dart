@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scryfall_app/globals/styles.dart';
+import 'package:scryfall_app/globals/globals.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -8,12 +8,28 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade800,
+        backgroundColor: kgrey,
         centerTitle: true,
         title: const Text("Scryfall"),
       ),
-      body: const Center(
-        child: Text("Teste", style: ktextWhite,),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: TextField(
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.search, color: kwhite),
+                labelText: "Input card name to search...",
+                labelStyle: ktextSearch,
+              ),
+              style: ktextWhite,
+              onSubmitted: (value) {
+                print(value);
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
