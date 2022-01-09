@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:scryfall_app/globals/globals.dart';
+import 'package:scryfall_app/network/net_helper.dart';
+import 'package:scryfall_app/pages/card_page.dart';
 
 class MainPage extends StatelessWidget {
-  const MainPage({Key? key}) : super(key: key);
+  MainPage({Key? key}) : super(key: key);
+
+  NetworkHelper networkHelper = NetworkHelper(url);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +28,13 @@ class MainPage extends StatelessWidget {
                 labelStyle: ktextSearch,
               ),
               style: ktextWhite,
-              onSubmitted: (value) {
-                print(value);
+              onSubmitted: (value) async {
+                var response = await networkHelper.getData(value);
+                print("foi\n ${response.toString()}");
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  return CardPage(data: response,);
+                }));
               },
             ),
           ),
