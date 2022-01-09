@@ -30,11 +30,24 @@ class MainPage extends StatelessWidget {
               style: ktextWhite,
               onSubmitted: (value) async {
                 var response = await networkHelper.getData(value);
-                print("foi\n ${response.toString()}");
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) {
-                  return CardPage(data: response,);
-                }));
+                if (response != null) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return CardPage(
+                      data: response,
+                    );
+                  }));
+                }
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                          title: const Text("Couldn't find anything"),
+                          actions: [
+                            TextButton(
+                                onPressed: () => Navigator.of(context).pop(),
+                                child: const Text("OK"))
+                          ],
+                        ));
               },
             ),
           ),

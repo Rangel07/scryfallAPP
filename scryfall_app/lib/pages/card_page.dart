@@ -12,14 +12,52 @@ class CardPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kgrey,
         centerTitle: true,
-        title: const Text("Teste"),
+        title: Text(data['name']),
       ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Text(data.toString(), style: ktextWhite,),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.network(data['image_uris']['normal']),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+              child: Card(
+                color: kgrey,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8,0,8,8),
+                  child: Text(data['type_line'], style: ktextCard,),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+              child: Card(
+                color: kgrey,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8,0,8,0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(Icons.brush_sharp, color: kwhite,),
+                      Container(width: 8,),
+                      Text("Artist ${data['artist']}", style: ktextCard,),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8,0,8,0),
+              child: Card(
+                color: kgrey,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(8,0,8,8),
+                  child: Text(data['legalities'].toString(), style: ktextCard,),
+                ),
+              ),
             ),
           ],
         ),

@@ -15,6 +15,7 @@ class NetworkHelper {
 
       return jsonDecode(data);
     } else {
+      // ignore: avoid_print
       print(response.statusCode);
     }
   }
