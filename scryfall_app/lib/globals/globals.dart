@@ -2,6 +2,24 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 // Variables
+const formatList = ['standard',
+'future',
+'historic',
+'gladiator',
+'pioneer',
+'modern',
+'legacy',
+'pauper',
+'vintage',
+'penny',
+'commander',
+'brawl',
+'historicbrawl',
+'alchemy',
+'paupercommander',
+'duel',
+'oldschool',
+'premodern'];
 
 // using fuzzy search
 const url = 'https://api.scryfall.com/cards/named?fuzzy=';

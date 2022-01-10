@@ -37,17 +37,19 @@ class MainPage extends StatelessWidget {
                       data: response,
                     );
                   }));
+                } else {
+                  //TODO Do proper style for dialog
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                            title: const Text("Couldn't find anything"),
+                            actions: [
+                              TextButton(
+                                  onPressed: () => Navigator.of(context).pop(),
+                                  child: const Text("OK"))
+                            ],
+                          ));
                 }
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) => AlertDialog(
-                          title: const Text("Couldn't find anything"),
-                          actions: [
-                            TextButton(
-                                onPressed: () => Navigator.of(context).pop(),
-                                child: const Text("OK"))
-                          ],
-                        ));
               },
             ),
           ),

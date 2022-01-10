@@ -1,10 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:scryfall_app/globals/globals.dart';
+import 'package:scryfall_app/widgets/format_legal.dart';
 
 class CardPage extends StatelessWidget {
-  const CardPage({this.data});
+  const CardPage({Key? key, this.data}) : super(key: key);
 
-  final data;
+  final dynamic data;
 
   @override
   Widget build(BuildContext context) {
@@ -49,16 +52,8 @@ class CardPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(8,0,8,0),
-              child: Card(
-                color: kgrey,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8,0,8,8),
-                  child: Text(data['legalities'].toString(), style: ktextCard,),
-                ),
-              ),
-            ),
+            CardLegal(data: data['legalities'])
+            
           ],
         ),
       ),
