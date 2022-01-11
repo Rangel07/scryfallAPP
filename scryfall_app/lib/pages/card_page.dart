@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:scryfall_app/globals/globals.dart';
-import 'package:scryfall_app/widgets/format_legal.dart';
+import 'package:scryfall_app/widgets/card_legal.dart';
 
 class CardPage extends StatelessWidget {
   const CardPage({Key? key, this.data}) : super(key: key);
