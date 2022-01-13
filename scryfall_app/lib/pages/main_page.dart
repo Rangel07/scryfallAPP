@@ -6,7 +6,7 @@ import 'package:scryfall_app/pages/card_page.dart';
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
 
-  NetworkHelper networkHelper = NetworkHelper(url);
+  NetworkHelper networkHelper = NetworkHelper(urlFuzzy);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,7 @@ class MainPage extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(16.0),
+            // Field Search card when submited ("ENTER")
             child: TextField(
               decoration: const InputDecoration(
                 prefixIcon: Icon(Icons.search, color: kwhite),
@@ -29,6 +30,7 @@ class MainPage extends StatelessWidget {
               ),
               style: ktextWhite,
               onSubmitted: (value) async {
+                // Making search with input text
                 var response = await networkHelper.getData(value);
                 if (response != null) {
                   Navigator.push(context,
@@ -38,17 +40,26 @@ class MainPage extends StatelessWidget {
                     );
                   }));
                 } else {
-                  //TODO Do proper style for dialog
+                  // Dialog if search failed to find card
                   showDialog(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                            title: const Text("Couldn't find anything"),
-                            actions: [
-                              TextButton(
-                                  onPressed: () => Navigator.of(context).pop(),
-                                  child: const Text("OK"))
-                            ],
-                          ));
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text(
+                        "Couldn't find anything",
+                        style: ktextWhite,
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: const Text(
+                            "OK",
+                            style: ktextWhite,
+                          ),
+                        )
+                      ],
+                      backgroundColor: kcardColor,
+                    ),
+                  );
                 }
               },
             ),

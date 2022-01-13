@@ -20,14 +20,14 @@ const formatList = ['standard',
 'duel',
 'oldschool',
 'premodern'];
-
 // using fuzzy search
-const url = 'https://api.scryfall.com/cards/named?fuzzy=';
+const urlFuzzy = 'https://api.scryfall.com/cards/named?fuzzy=';
 
 // Colors
 const kpurple = Color.fromARGB(255, 42, 0, 47);
 const kwhite = Color.fromARGB(220, 255,255,255);
 const kgrey = Color.fromARGB(255, 71,63,72);
+const kcardColor = Color.fromARGB(255, 91,83,92);
 
 // TextStyles
 const ktextWhite = TextStyle(color: kwhite, fontSize: 16);

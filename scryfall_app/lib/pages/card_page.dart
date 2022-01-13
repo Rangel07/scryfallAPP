@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:scryfall_app/globals/globals.dart';
 import 'package:scryfall_app/widgets/card_legal.dart';
@@ -15,16 +13,19 @@ class CardPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kgrey,
         centerTitle: true,
+        // Name of the card searched
         title: Text(data['name']),
       ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Card image in normal size
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Image.network(data['image_uris']['normal']),
             ),
+            // Box with card type
             Padding(
               padding: const EdgeInsets.fromLTRB(8,0,8,0),
               child: Card(
@@ -35,6 +36,7 @@ class CardPage extends StatelessWidget {
                 ),
               ),
             ),
+            // Box with the name of this card artist
             Padding(
               padding: const EdgeInsets.fromLTRB(8,0,8,0),
               child: Card(
@@ -52,6 +54,7 @@ class CardPage extends StatelessWidget {
                 ),
               ),
             ),
+            // List with Play Formats and its legalities
             CardLegal(data: data['legalities'])
             
           ],

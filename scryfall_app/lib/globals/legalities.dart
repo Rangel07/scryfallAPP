@@ -1,3 +1,4 @@
+// Class for format legalities about a card
 class Legalities {
   String? standard;
   String? future;
@@ -18,6 +19,7 @@ class Legalities {
   String? oldschool;
   String? premodern;
 
+  // Normal constructor
   Legalities({
       this.standard,
       this.future,
@@ -37,7 +39,7 @@ class Legalities {
       this.duel,
       this.oldschool,
       this.premodern});
-
+  // Constructor using _JsonMap
   Legalities.fromJson(dynamic json) {
     standard = json['standard'];
     future = json['future'];
@@ -59,26 +61,27 @@ class Legalities {
     premodern = json['premodern'];
   }
 
+  // Transform in Json (Map<String, dynamic>)
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['standard'] = this.standard;
-    data['future'] = this.future;
-    data['historic'] = this.historic;
-    data['gladiator'] = this.gladiator;
-    data['pioneer'] = this.pioneer;
-    data['modern'] = this.modern;
-    data['legacy'] = this.legacy;
-    data['pauper'] = this.pauper;
-    data['vintage'] = this.vintage;
-    data['penny'] = this.penny;
-    data['commander'] = this.commander;
-    data['brawl'] = this.brawl;
-    data['historicbrawl'] = this.historicbrawl;
-    data['alchemy'] = this.alchemy;
-    data['paupercommander'] = this.paupercommander;
-    data['duel'] = this.duel;
-    data['oldschool'] = this.oldschool;
-    data['premodern'] = this.premodern;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['standard'] = standard;
+    data['future'] = future;
+    data['historic'] = historic;
+    data['gladiator'] = gladiator;
+    data['pioneer'] = pioneer;
+    data['modern'] = modern;
+    data['legacy'] = legacy;
+    data['pauper'] = pauper;
+    data['vintage'] = vintage;
+    data['penny'] = penny;
+    data['commander'] = commander;
+    data['brawl'] = brawl;
+    data['historicbrawl'] = historicbrawl;
+    data['alchemy'] = alchemy;
+    data['paupercommander'] = paupercommander;
+    data['duel'] = duel;
+    data['oldschool'] = oldschool;
+    data['premodern'] = premodern;
     return data;
   }
 }
