@@ -39,7 +39,9 @@ class MainPage extends StatelessWidget {
                       data: response,
                     );
                   }));
-                } else {
+                }
+                //TODO if Fuzzy search doesn't work put on "normal"search with q=name:
+                else {
                   // Dialog if search failed to find card
                   showDialog(
                     context: context,
