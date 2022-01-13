@@ -61,29 +61,3 @@ class CardLegal extends StatelessWidget {
     );
   }
 }
-
-
-// Row(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           Column(
-//             crossAxisAlignment: CrossAxisAlignment.end,
-//             children: [
-//               for (var format in formatList)
-//               Card(child: Padding(
-//                 padding: const EdgeInsets.all(5.0),
-//                 child: Text("$format ", style: ktextCard,),
-//               ), color: kgrey,),
-//             ],
-//           ),
-//           Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//             for (var format in formatList)
-//             Card(child: Padding(
-//                 padding: const EdgeInsets.all(5.0),
-//                 child: Text(legalList[format], style: ktextCard,),
-//               ),color: (legalList[format]=='legal')? Colors.green : Colors.red,)
-//           ],)
-//         ],
-//       ),
