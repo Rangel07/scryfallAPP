@@ -21,29 +21,32 @@ class CardLegal extends StatelessWidget {
           for (var format in formatList)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              // TODO SizedBoxes and adjust
               children: [
-                Expanded(
-                  flex: 1,
+                SizedBox(
+                  width: 155,
                   child: Card(
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
-                      child: Text(
-                        "$format ",
-                        style: ktextCard,
+                      child: Center(
+                        child: Text(
+                          "$format ",
+                          style: ktextCard,
+                        ),
                       ),
                     ),
                     color: kgrey,
                   ),
                 ),
-                Expanded(
-                  flex: 1,
+                SizedBox(
+                  width: 90,
                   child: Card(
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
-                      child: Text(
-                        legalList[format],
-                        style: ktextCard,
+                      child: Center(
+                        child: Text(
+                          legalList[format],
+                          style: ktextCard,
+                        ),
                       ),
                     ),
                     color: (legalList[format] == 'legal')
