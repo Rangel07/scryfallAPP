@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scryfall_app/globals/globals.dart';
 import 'package:scryfall_app/network/net_helper.dart';
+import 'package:scryfall_app/pages/card_list.dart';
 import 'package:scryfall_app/pages/card_page.dart';
 
 import 'double_face_page.dart';
@@ -34,7 +35,6 @@ class MainPage extends StatelessWidget {
               onSubmitted: (value) async {
                 // Making searches with input text
                 var response = await networkHelper.getFuzzy(value);
-                var responseList = await networkHelper.getFuzzy(value);
                 if (response != null) {
                   //verify if it is a double faced card
                   if (response['card_faces'] == null) {
@@ -58,12 +58,20 @@ class MainPage extends StatelessWidget {
                     );
                   }
                 }
-                //TODO if Fuzzy search doesn't work put on "normal"search with q=name=
+                //TODO if Fuzzy search doesn't work put on "normal" search with q=name=
+                var responseList = await networkHelper.getSearch(value);
                 if (responseList != null && response == null) {
-                  print(responseList.toString());
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                        return CardList(
+                          data: responseList,
+                          searchValue: value,
+                        );
+                      }),
+                    );
                 }
-
-                if (responseList == null && responseList == null) {
+                if (responseList == null && response == null) {
                   // Dialog if search failed to find card
                   showDialog(
                     context: context,

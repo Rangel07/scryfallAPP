@@ -23,7 +23,7 @@ class CardPage extends StatelessWidget {
             // Card image in normal size
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.network(data['image_uris']['normal']),
+              child: Image.network(data['image_uris']['png']),
             ),
             // Box with card type
             Padding(

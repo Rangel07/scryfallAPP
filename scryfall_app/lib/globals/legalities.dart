@@ -63,7 +63,7 @@ class Legalities {
 
   // Transform in Json (Map<String, dynamic>)
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['standard'] = standard;
     data['future'] = future;
     data['historic'] = historic;

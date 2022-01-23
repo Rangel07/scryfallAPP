@@ -23,7 +23,7 @@ class CardLegal extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  width: 155,
+                  width: 157,
                   child: Card(
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),

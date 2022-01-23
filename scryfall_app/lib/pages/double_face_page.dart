@@ -14,6 +14,7 @@ class DoubleFacePage extends StatefulWidget {
 class _DoubleFacePageState extends State<DoubleFacePage> {
   int cardFace = 0;
 
+  // Funtion to change the face of searched card
   void changeFace() {
     if (cardFace == 0) {
       cardFace = 1;
@@ -64,7 +65,7 @@ class _DoubleFacePageState extends State<DoubleFacePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Image.network(
-                  widget.data['card_faces'][cardFace]['image_uris']['normal']),
+                  widget.data['card_faces'][cardFace]['image_uris']['png']),
             ),
             // Box with card type
             Padding(
