@@ -58,7 +58,7 @@ class MainPage extends StatelessWidget {
                     );
                   }
                 }
-                //TODO if Fuzzy search doesn't work put on "normal" search with q=name=
+                // Normal search with q=name= when fuzzy don't find one card
                 var responseList = await networkHelper.getSearch(value);
                 if (responseList != null && response == null) {
                   Navigator.push(

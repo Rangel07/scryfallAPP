@@ -25,9 +25,11 @@ class CardList extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // Iterate Json for each card in list
             for (var card in data['data'])
               Padding(
                 padding: const EdgeInsets.all(8.0),
+                // Gesture to access card onTap
                 child: GestureDetector(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,7 +62,9 @@ class CardList extends StatelessWidget {
                             );
                           }),
                         );
-                      } else {
+                      }
+                      // When the card has only one face 
+                      else {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (BuildContext context) {
