@@ -3,10 +3,12 @@ import 'package:scryfall_app/globals/globals.dart';
 import 'package:scryfall_app/network/net_helper.dart';
 import 'package:scryfall_app/pages/card_page.dart';
 
+import 'double_face_page.dart';
+
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
 
-  NetworkHelper networkHelper = NetworkHelper(urlFuzzy);
+  NetworkHelper networkHelper = NetworkHelper();
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +32,38 @@ class MainPage extends StatelessWidget {
               ),
               style: ktextWhite,
               onSubmitted: (value) async {
-                // Making search with input text
-                var response = await networkHelper.getData(value);
+                // Making searches with input text
+                var response = await networkHelper.getFuzzy(value);
+                var responseList = await networkHelper.getFuzzy(value);
                 if (response != null) {
-                  Navigator.push(context,
+                  //verify if it is a double faced card
+                  if (response['card_faces'] == null) {
+                    Navigator.push(
+                      context,
                       MaterialPageRoute(builder: (BuildContext context) {
-                    return CardPage(
-                      data: response,
+                        return CardPage(
+                          data: response,
+                        );
+                      }),
                     );
-                  }));
+                  }
+                  else{
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                        return DoubleFacePage(
+                          data: response,
+                        );
+                      }),
+                    );
+                  }
                 }
-                //TODO if Fuzzy search doesn't work put on "normal"search with q=name:
-                else {
+                //TODO if Fuzzy search doesn't work put on "normal"search with q=name=
+                if (responseList != null && response == null) {
+                  print(responseList.toString());
+                }
+
+                if (responseList == null && responseList == null) {
                   // Dialog if search failed to find card
                   showDialog(
                     context: context,

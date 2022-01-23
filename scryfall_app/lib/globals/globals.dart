@@ -22,6 +22,7 @@ const formatList = ['standard',
 'premodern'];
 // using fuzzy search
 const urlFuzzy = 'https://api.scryfall.com/cards/named?fuzzy=';
+const urlSearch = 'https://api.scryfall.com/cards/search?order=name&q=name=';
 
 // Colors
 const kpurple = Color.fromARGB(255, 42, 0, 47);
