@@ -3,9 +3,10 @@ import 'package:scryfall_app/globals/globals.dart';
 import 'package:scryfall_app/network/net_helper.dart';
 import 'package:scryfall_app/pages/card_page.dart';
 import 'package:scryfall_app/pages/double_face_page.dart';
+import 'package:scryfall_app/widgets/card_card.dart';
 
-class CardList extends StatelessWidget {
-  CardList({Key? key, this.data, required this.searchValue}) : super(key: key);
+class CardListPage extends StatelessWidget {
+  CardListPage({Key? key, this.data, required this.searchValue}) : super(key: key);
 
   final dynamic data;
   final String searchValue;
@@ -19,7 +20,7 @@ class CardList extends StatelessWidget {
         backgroundColor: kgrey,
         centerTitle: true,
         // name searched
-        title: Text(searchValue),
+        title: Text("List for: " + searchValue),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -34,18 +35,8 @@ class CardList extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: SizedBox(
-                              height: 350,
-                              // Ternary to make through double face cards (only shows front face)
-                              child: (card['card_faces'] == null)
-                                  ? Image.network(card['image_uris']['png'])
-                                  : Image.network(card['card_faces'][0]
-                                      ['image_uris']['png'])),
-                        ),
-                      )
+                      // Custom widget for card of card
+                      CardCard(card: card)
                     ],
                   ),
                   // Open card page if tap on it
@@ -84,3 +75,4 @@ class CardList extends StatelessWidget {
     );
   }
 }
+

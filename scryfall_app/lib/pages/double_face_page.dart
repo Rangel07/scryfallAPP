@@ -3,7 +3,7 @@ import 'package:scryfall_app/globals/globals.dart';
 import 'package:scryfall_app/widgets/card_legal.dart';
 
 class DoubleFacePage extends StatefulWidget {
-  const DoubleFacePage({this.data});
+  const DoubleFacePage({Key? key, this.data}) : super(key: key);
 
   final dynamic data;
 

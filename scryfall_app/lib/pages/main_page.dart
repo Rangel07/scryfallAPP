@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scryfall_app/globals/globals.dart';
 import 'package:scryfall_app/network/net_helper.dart';
-import 'package:scryfall_app/pages/card_list.dart';
+import 'package:scryfall_app/pages/card_list_page.dart';
 import 'package:scryfall_app/pages/card_page.dart';
 
 import 'double_face_page.dart';
@@ -9,7 +9,7 @@ import 'double_face_page.dart';
 class MainPage extends StatelessWidget {
   MainPage({Key? key}) : super(key: key);
 
-  NetworkHelper networkHelper = NetworkHelper();
+  final NetworkHelper networkHelper = NetworkHelper();
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +64,7 @@ class MainPage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (BuildContext context) {
-                        return CardList(
+                        return CardListPage(
                           data: responseList,
                           searchValue: value,
                         );
