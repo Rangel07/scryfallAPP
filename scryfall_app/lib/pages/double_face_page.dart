@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scryfall_app/globals/globals.dart';
+import 'package:scryfall_app/resources/globals.dart';
 import 'package:scryfall_app/widgets/card_legal.dart';
 
 class DoubleFacePage extends StatefulWidget {

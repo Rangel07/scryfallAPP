@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scryfall_app/globals/globals.dart';
-import 'package:scryfall_app/globals/legalities.dart';
+import 'package:scryfall_app/resources/globals.dart';
+import 'package:scryfall_app/resources/legalities.dart';
 
 class CardLegal extends StatelessWidget {
   const CardLegal({Key? key, @required this.data}) : super(key: key);

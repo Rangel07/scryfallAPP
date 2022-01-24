@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scryfall_app/pages/main_page.dart';
 
-import 'globals/globals.dart';
+import 'resources/globals.dart';
 
 void main() {
   runApp(const MyApp());

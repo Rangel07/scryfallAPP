@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scryfall_app/globals/globals.dart';
+import 'package:scryfall_app/resources/globals.dart';
 import 'package:scryfall_app/network/net_helper.dart';
 import 'package:scryfall_app/pages/card_page.dart';
 import 'package:scryfall_app/pages/double_face_page.dart';

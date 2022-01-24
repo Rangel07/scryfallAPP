@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:scryfall_app/globals/globals.dart';
+import 'package:scryfall_app/resources/globals.dart';
 
 class NetworkHelper {
 

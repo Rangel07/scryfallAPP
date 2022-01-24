@@ -1,16 +1,19 @@
-# scryfall_app
+# Scryfall app
 
-A new Flutter project.
+## API endpoints used
+*  https://api.scryfall.com/cards/named?fuzzy={card_name}
+*  https://api.scryfall.com/cards/search?q=name%3A{incomplete_card_name}
 
-## Getting Started
+## Pages
+* **Search Page** (main_page.dart)
 
-This project is a starting point for a Flutter application.
+    * **Searchbar:** when submit the app tries first the fuzzy endpoint, if it don't return a card, the app tries search endpoint. 
+    * **Page routes for fuzzy:**
 
-A few resources to get you started if this is your first Flutter project:
+        * CardPage (card_page.dart)
+        * DoubleFacePage (double_face_page.dart)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+    * **Page route for search:** 
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+        * CardListPage (card_list_page.dart) 
+        
