@@ -1,4 +1,5 @@
 # Scryfall app v1.0
+Personal project to develop skills, non-profitable.
 
 App to search for Magic the gathering cards using the scryfall's API.
 
@@ -8,3 +9,4 @@ App to search for Magic the gathering cards using the scryfall's API.
 
 ## To develop
 * Page for advanced search filling with cards characteristics
+* Improve design
