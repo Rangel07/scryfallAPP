@@ -5,15 +5,12 @@
 *  https://api.scryfall.com/cards/search?q=name%3A{incomplete_card_name}
 
 ## Pages
-* **Search Page** (main_page.dart)
+* **Search Page**
 
     * **Searchbar:** when submit the app tries first the fuzzy endpoint, if it don't return a card, the app tries search endpoint. 
-    * **Page routes for fuzzy:**
+* **Card Pages:** return card image, type of card, artist the ilustration and a legalities list. There are two types of card and its pages:
+    
+    * **CardPage:** when it is a single face card.
+    * **DoubleFacePage:** when it is a double face card.
 
-        * CardPage (card_page.dart)
-        * DoubleFacePage (double_face_page.dart)
-
-    * **Page route for search:** 
-
-        * CardListPage (card_list_page.dart) 
-        
+* **Cards list:** page for result of search endpoint. It returns a list with card images and if clicked return the card page.
