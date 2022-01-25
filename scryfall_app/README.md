@@ -1,16 +1,16 @@
-# scryfall_app
+# Scryfall app
 
-A new Flutter project.
+## API endpoints used
+*  https://api.scryfall.com/cards/named?fuzzy={card_name}
+*  https://api.scryfall.com/cards/search?q=name%3A{incomplete_card_name}
 
-## Getting Started
+## Pages
+* **Search Page**
 
-This project is a starting point for a Flutter application.
+    * **Searchbar:** when submit the app tries first the fuzzy endpoint, if it don't return a card, the app tries search endpoint. 
+* **Card Pages:** return card image, type of card, artist the ilustration and a legalities list. There are two types of card and its pages:
+    
+    * **CardPage:** when it is a single face card.
+    * **DoubleFacePage:** when it is a double face card.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* **Cards list:** page for result of search endpoint. It returns a list with card images and if clicked return the card page.
