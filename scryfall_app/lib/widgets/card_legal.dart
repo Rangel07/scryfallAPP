@@ -44,7 +44,7 @@ class CardLegal extends StatelessWidget {
                       padding: const EdgeInsets.all(5.0),
                       child: Center(
                         child: Text(
-                          legalList[format],
+                          legalList[format] ?? 'N/A',
                           style: ktextCard,
                         ),
                       ),

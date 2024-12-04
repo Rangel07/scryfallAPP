@@ -40,16 +40,17 @@ class _DoubleFacePageState extends State<DoubleFacePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                width: 125,
+                width: MediaQuery.of(context).size.width * 0.4,
                 child: ElevatedButton(
                   style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(kgrey)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                            WidgetStateProperty.all<Color>(kgrey),
+                        foregroundColor: WidgetStateProperty.all<Color>(klightPurple)
+                        ),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
                       Icon(Icons.refresh),
-                      SizedBox(width: 10,),
                       Text('Flip Card'),
                     ],
                   ),

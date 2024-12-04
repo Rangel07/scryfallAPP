@@ -25,6 +25,7 @@ const urlSearch = 'https://api.scryfall.com/cards/search?q=name%3A';
 
 // Colors
 const kpurple = Color.fromARGB(255, 42, 0, 47);
+const klightPurple = Color.fromARGB(255, 182, 74, 194);
 const kwhite = Color.fromARGB(220, 255,255,255);
 const kgrey = Color.fromARGB(255, 71,63,72);
 const kcardColor = Color.fromARGB(255, 91,83,92);

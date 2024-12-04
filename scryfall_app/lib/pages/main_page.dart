@@ -18,6 +18,7 @@ class MainPage extends StatelessWidget {
         backgroundColor: kgrey,
         centerTitle: true,
         title: const Text("Scryfall"),
+        foregroundColor: kwhite,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,34 +34,9 @@ class MainPage extends StatelessWidget {
               ),
               style: ktextWhite,
               onSubmitted: (value) async {
-                // Making searches with input text
-                var response = await networkHelper.getFuzzy(value);
-                if (response != null) {
-                  //verify if it is a double faced card
-                  if (response['card_faces'] == null) {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                        return CardPage(
-                          data: response,
-                        );
-                      }),
-                    );
-                  }
-                  else{
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                        return DoubleFacePage(
-                          data: response,
-                        );
-                      }),
-                    );
-                  }
-                }
                 // Normal search with q=name= when fuzzy don't find one card
                 var responseList = await networkHelper.getSearch(value);
-                if (responseList != null && response == null) {
+                if (responseList != null) {
                   Navigator.push(
                       context,
                       MaterialPageRoute(builder: (BuildContext context) {
@@ -71,7 +47,7 @@ class MainPage extends StatelessWidget {
                       }),
                     );
                 }
-                if (responseList == null && response == null) {
+                if (responseList == null) {
                   // Dialog if search failed to find card
                   showDialog(
                     context: context,
